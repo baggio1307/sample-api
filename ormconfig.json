@@ -1,0 +1,9 @@
+{
+    "type": "mongodb",
+    "host": "localhost",
+    "port": 27017,
+    "database": "sample-api",
+    "entities": [
+        "./src/**/*.entity{.ts,.js}"
+    ]
+}

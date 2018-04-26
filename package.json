@@ -19,7 +19,6 @@
     "@nestjs/microservices": "^4.5.8",
     "@nestjs/mongoose": "^3.0.1",
     "@nestjs/testing": "^4.5.5",
-    "@nestjs/typeorm": "^2.0.0",
     "@nestjs/websockets": "^4.5.8",
     "@types/mongoose": "^5.0.10",
     "@types/uuid": "^3.4.3",

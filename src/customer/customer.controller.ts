@@ -1,7 +1,7 @@
+import { Customer } from './interfaces/customer.interface';
 
 import { Controller, Get, Post, Body } from '@nestjs/common';
 import { CustomerService } from './customer.service';
-import { Customer } from './customer.entity';
 
 @Controller('customer')
 export class CustomerController {

@@ -1,37 +1,31 @@
-import { BaseEntity, PrimaryGeneratedColumn, Column, BeforeUpdate, ObjectID, ObjectIdColumn, BeforeInsert, Generated, PrimaryColumn } from 'typeorm';
+import { BaseEntity, PrimaryGeneratedColumn, Column, BeforeUpdate, ObjectID, ObjectIdColumn, BeforeInsert, Generated, PrimaryColumn, CreateDateColumn } from 'typeorm';
 
 export abstract class BaseDomain extends BaseEntity {
 
-    @PrimaryGeneratedColumn()
-    private uuid: number;
-
-    @Column({ default: false })
-    private deleted: boolean;
+    @ObjectIdColumn()
+    id: ObjectID;
 
     @Column()
-    private createdAt: Date = new Date();
+    deleted: boolean;
 
     @Column()
-    private updatedAt: Date = new Date();
+    createdAt: Date;
 
-    @Column()
-    private deletedAt: Date;
+    // @Column()
+    // private updatedAt: Date = new Date();
 
-    @Column()
-    private teste = 'Teste';
+    // @Column()
+    // private deletedAt: Date;
 
-    @BeforeUpdate()
-    setDeletedAt(): void {
-        this.updatedAt = new Date();
-        if (this.deleted) {
-            this.deletedAt = new Date();
-        }
-    }
+    // @Column()
+    // private teste = 'Teste';
 
-    @BeforeInsert()
-    setCreatedAt(): void {
-        console.log('Inseriu!!!!!', JSON.stringify(this));
-        this.createdAt = new Date();
-    }
+    // @BeforeUpdate()
+    // setDeletedAt(): void {
+    //     this.updatedAt = new Date();
+    //     if (this.deleted) {
+    //         this.deletedAt = new Date();
+    //     }
+    // }
 
 }
